@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bassco Beauty</title>
+    <link rel="icon" href="../img/logoicon.svg">
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/main-page.css">
+    <link rel="stylesheet" href="../style/catalogue.css">
+</head>
+
+<body>
+    <header class="header">
+        <!--Шапка с навигацией-->
+            <div class="container">
+                <div class="header__upper">
+                    <a href="index.html"><img src="../img/logo.png" alt="Логотип"></a>
+                    <nav class="header__upper-nav">
+                        <a href="../index.html">ГЛАВНАЯ</a>
+                        <a href="catalogue.html">КАТАЛОГ</a>
+                        <a href="../pages/gallery.html">ГАЛЛЕРЕЯ</a>
+                        <a href="../pages/about.html">О КОМПАНИИ</a>
+                        <a href="../pages/contacts.html">КОНТАКТЫ</a>
+                    </nav>
+                    <div class="header__upper-contacts">
+                        <button class="header__upper-contacts__button button__yellow">
+                            СОТРУДНИЧЕСТВО
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <main>
+        <section class="catalogue"> <!-- Каталог товаров -->
+            <div class="container">
+                <div class="catalogue__sort">
+                    <div class="catalogue__sort-nav">
+                        <a href="../index.html">Главная</a>
+                        <span>-----</span>
+                        <a href="catalogue.html">Каталог</a>
+                        <h1>каталог</h1>
+                    </div>
+                    <div class="catalogue__sort-options">
+                        <label>Сортировать:</label>
+                        <select name="sort">
+                            <option value="articul">По артикулу</option>
+                            <option value="cheaper">Сначала дешевле</option>
+                            <option value="moreexpensive">Сначала дороже</option>
+                            <option value="newer">Сначала новее</option>
+                            <option value="older">Сначала старые</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="catalogue__main">
+                    <div class="catalogue__main-filter">
+                        <ul class="filter__checklist">
+                            <li>
+                                <div class="filter__checklist-main">
+                                    <h2>фильтр</h2>
+                                    <input type="checkbox" name="available">
+                                    <label>В наличии</label><br>
+                                    <input type="checkbox" name="new">
+                                    <label>Новинки</label><br>
+                                    <input type="checkbox" name="sale">
+                                    <label>Акции/Скидки</label><br>
+                                    <input type="checkbox" name="bestseller">
+                                    <label>Хит продаж</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter__checklist-types">
+                                    <h2>Виды услуг</h2>
+                                    <input type="checkbox" name="earrings">
+                                    <label>Уход за лицом</label><br>
+                                    <input type="checkbox" name="bracelettes">
+                                    <label>Чистка лица</label><br>
+                                    <input type="checkbox" name="necklaces">
+                                    <label>Наращивание ресниц</label><br>
+                                    <input type="checkbox" name="crosses">
+                                    <label>Уходовые процедуры</label>
+                                    <input type="checkbox" name="crosses">
+                                    <label>Аппаратная косметология</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter__checklist-main">
+                                    <h2>Виды услуг</h2>
+                                    <input type="checkbox" name="earrings">
+                                    <label>Уход за лицом</label><br>
+                                    <input type="checkbox" name="bracelettes">
+                                    <label>Чистка лица</label><br>
+                                    <input type="checkbox" name="necklaces">
+                                    <label>Наращивание ресниц</label><br>
+                                    <input type="checkbox" name="crosses">
+                                    <label>Уходовые процедуры</label>
+                                    <input type="checkbox" name="crosses">
+                                    <label>Аппаратная косметология</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter__checklist-main">
+                                    <h2>вставка</h2>
+                                    <input type="checkbox" name="withvstavka">
+                                    <label>Со вставками</label><br>
+                                    <input type="checkbox" name="withoutvstavka">
+                                    <label>Без вставок</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="filter__checklist-cost">
+                                    <h2>Стоимость</h2>
+                                    <div class="cost__minmax">
+                                        <input type="text" placeholder="200">
+                                        <input type="text" placeholder="5900">
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="catalogue.html" class="button__yellow">ПРИМЕНИТЬ ФИЛЬТРЫ</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalogue__main-list">
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                        <div class="catalogue__main-list__jewelry jewelry__item">
+                            <span>Новинка!</span>
+                            <button>
+                                <img src="../img/like.svg" alt="Like icon">
+                                <img src="../img/like-pressed.svg" alt="Like icon">
+                            </button>
+                            <img src="../img/cataloguephoto.png" alt="Изображение услуги каталога">
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <button class="jewelry__item-button button__photo"></button>
+                            <span>Глубокое увлажнение и питание</span>
+                            <span>5 990 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalogue__pages">
+                    <div class="catalogue__pages-items">
+                        <a href="catalogue.html">1</a>
+                        <a href="catalogue.html">2</a>
+                        <a href="catalogue.html">3</a>
+                        <span>...</span>
+                        <a href="catalogue.html">22</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="upper-footer">
+                <img src="../img/logo.png" alt="">
+                <div class="upper-footer__nav">
+                    <nav>
+                        <a href="index.html">ГЛАВНАЯ</a>
+                        <a href="./pages/catalogue.html">КАТАЛОГ</a>
+                        <a href="./pages/gallery.html">ГАЛЛЕРЕЯ</a>
+                        <a href="./pages/about.html">О КОМПАНИИ</a>
+                        <a href="./pages/contacts.html">КОНТАКТЫ</a>
+                    </nav>
+                    <button class="button__yellow">СОТРУДНИЧЕСТВО</button>
+                </div>
+            </div>
+            <div class="under-footer">
+                <span>© Bassco 2022</span>
+                <a href="asd">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

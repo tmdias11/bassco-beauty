@@ -1,0 +1,242 @@
+main section:first-child {
+    background: none;
+}
+
+input[type="checkbox"] {
+    width: 21px;
+    height: 21px;
+}
+
+.catalogue__sort{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.catalogue__sort-nav a, span{
+    text-decoration: none;
+    color: rgb(190, 190, 190);
+}
+
+.catalogue__sort-options{
+    margin-right: 15px;
+}
+
+h1{
+    margin: 10px;
+}
+
+.catalogue__main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 0.4fr 0.65fr;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    gap: 50px;
+}
+
+.catalogue__main-filter {
+    background-color: #F5F7F9;
+    border: 1px solid #C7D2E0;
+    padding: 27px;
+    padding-bottom: 50px;
+}
+
+
+.catalogue__main-filter ul {
+    list-style: none;
+}
+
+.filter__checklist-main input {
+    margin: 10px;
+}
+
+.filter__checklist-types input,
+details {
+    margin: 10px;
+}
+
+.filter__checklist-main {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #C7D2E0;
+}
+
+.filter__checklist-types {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #C7D2E0;
+}
+
+.filter__checklist-main h2 {
+    margin: 15px 0px;
+    font-size: 27px;
+}
+
+.filter__checklist-types h2 {
+    margin: 15px 0px;
+    font-size: 27px;
+}
+
+.filter__checklist-types details>input {
+    margin-left: 20px;
+}
+
+.filter__checklist-cost {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0px;
+}
+
+.cost__minmax input {
+    padding: 15px;
+    border: solid 1px #C7D2E0;
+    width: 50%;
+}
+
+.cost__minmax {
+    display: flex;
+    gap: 13px;
+    height: 50px;
+}
+
+.catalogue__main-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    grid-row: span 2;
+}
+
+.catalogue__main-list__jewelry {
+    box-shadow: none;
+    border: 1px solid rgb(231, 231, 231);
+    width: 30%;
+}
+
+.jewelry__item button img {
+    max-width: 100%;
+}
+
+.catalogue__main-filter .button__yellow {
+    width: 100%;
+}
+
+.catalogue__pages{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+    max-height: 30px;
+}
+
+.catalogue__main-list__jewelry span:nth-of-type(2), span:nth-of-type(3){
+    color: #30343D;
+}
+
+.catalogue__pages-items{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.catalogue__pages-items a{
+    color: #30343D;
+    text-decoration: none;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px 10px;
+}
+
+.catalogue__pages-items a:focus{
+    border: 1px solid rgb(100, 100, 255);
+    padding: 5px 10px;
+}
+
+.catalogue__pages-items a:hover{
+    color: rgb(100, 100, 255);
+}
+
+.button__yellow{
+    text-decoration: none;
+}
+
+.catalogue__main-list__jewelry span:nth-of-type(2), span:nth-of-type(3){
+    color: #30343D;
+}
+
+@media screen and (min-width:431px) and (max-width:1024px){
+    .catalogue__main {
+        grid-template-rows: 0.4fr 0.8fr;
+    }
+
+    .catalogue{
+        padding: 0px 15px;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .catalogue__sort-nav{
+        margin-left: 15px;
+    }
+    
+    h1{
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .filter__checklist-main{
+        font-size: 11px;
+    }
+
+    .filter__checklist-main h2{
+        font-size: 15px;
+    }
+
+    .catalogue__main-filter{
+        width: 150px;
+        height: 1000px;
+        padding: 10px;
+    }
+
+    input[type=checkbox]{
+        width: 13px;
+        height: 13px;
+    }
+
+    .filter__checklist-types h2 {
+        margin: 10px;
+        font-size: 15px;
+    }
+
+    .filter__checklist-cost h2{
+        font-size: 15px;
+    }
+
+    .button__yellow{
+        display: block;
+        text-align: center;
+    }
+
+    .catalogue__main {
+        gap: 20px;
+    }
+
+    .catalogue__main-list__jewelry {
+        width: 90%;
+    }
+
+    .catalogue__main{
+        padding-left: 25px;
+    }
+
+    .catalogue__main-list{
+        gap: 15px;
+    }
+
+    .cost__minmax input {
+        height: 30px;
+        padding: 5px;
+        box-sizing: unset;
+    }
+}
