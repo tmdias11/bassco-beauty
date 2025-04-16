@@ -45,10 +45,20 @@
                     <h1>Наши работы</h1>
                     <div class="gallery__main-images" id="galleryMain">
                         <div class="main-images__container" id="galleryContainer">
+                            <!-- Здесь располагаются большие посты -->
+                        </div>
+                        <div class="main-images__gallery" id="galleryMainContainer">
+                            <!-- Здесь располагаются маленькие посты (SmallPost) -->
                         </div>
                     </div>
-                    <div class="gallery__main-sort">
-                        <button>Показать больше</button>
+                    <div id="modalSlider" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="modalImage">
+                        <div class="modal-caption" id="modalCaption"></div>
+                        <div class="modal-nav">
+                            <button id="prevBtn">&#10094;</button>
+                            <button id="nextBtn">&#10095;</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,22 +79,19 @@
                         <div class="about__us-icon__img">
                             <img src="../img/tools.svg" alt="Tools icon">
                         </div>
-                        <span>Собственное
-                            производство</span>
+                        <span>Собственное производство</span>
                     </div>
                     <div class="about__us-icon">
                         <div class="about__us-icon__img">
                             <img src="../img/tools.svg" alt="Tools icon">
                         </div>
-                        <span>Ускоренная
-                            доставка</span>
+                        <span>Ускоренная доставка</span>
                     </div>
                     <div class="about__us-icon">
                         <div class="about__us-icon__img">
                             <img src="../img/tools.svg" alt="Tools icon">
                         </div>
-                        <span>Собственное
-                            производство</span>
+                        <span>Собственное производство</span>
                     </div>
                     <img src="../img/aboutus.png" alt="RIng pic" class="about__us-img">
                 </div>
@@ -114,65 +121,151 @@
     </footer>
     <script>
         let postArray = [];
-        let globalCount = 1;
+        let smallPostArray = [];
+    
         class Post {
-            constructor(masterName, tag = "div", imgId, style = {}, description = "", preShowSLider, showSlider, afterShowSlider, postId = imgId) {
+            constructor(masterName, tag = "div", imgId, style = {}, description = "") {
                 this.masterName = masterName;
                 this.tag = tag;
                 this.imgId = imgId;
                 this.description = description;
-                this.preShowSLider = false;
-                this.showSlider = false;
-                this.afterShowSlider = false;
-                this.postId = imgId;
-
+    
                 const defaultStyle = {
-                    padding: "10px",
+                    padding: "20px",
                     margin: "10px",
                     backgroundColor: "#f9f9f9",
-                    border: "1px solid #ddd",
                     borderRadius: "10px",
-                    boxShadow: "0 0 50px 10px rgba(0, 0, 0, 0.07)",
-                    transition: "0.3s"
+                    boxShadow: "0 0 30px 5px rgba(0, 0, 0, 0.15)",
+                    color: "#333",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    minHeight: "200px",
+                    width: "27%",
+                    border: "7px solid white",
+                    borderBottom: "40px solid white",
+                    transition: "0.25s",
+                    height: "470px"
                 };
-
+    
                 this.style = {};
                 for (let key in defaultStyle) {
                     this.style[key] = defaultStyle[key];
                 }
-
+    
                 for (let key in style) {
                     this.style[key] = style[key];
                 }
-
+    
+                if (this.imgId) {
+                    this.style.backgroundImage = `url('../img/galleryImages/image${this.imgId}.jpg')`;
+                }
+    
                 this.element = document.createElement(this.tag);
-                this.element.description = description;
-
+                this.element.innerHTML = `<div></div>`;
+    
                 for (let key in this.style) {
                     this.element.style[key] = this.style[key];
                 }
-
-                if (this.imgId) {
-                    const img = document.createElement("img");
-                    img.src = `../img/manik${this.imgId}.jpg`;
-                    img.alt = `Работа мастера ${this.masterName}`;
-                    img.style.width = "80%";
-                    img.style.borderRadius = "10px";
-                    this.element.prepend(img);
-                }
-
+    
                 postArray.push(this);
             }
         }
-
-        const post1 = new Post("Анна", "div", 1, {}, "Маникюр с цветочным дизайном");
-        const post2 = new Post("Елена", "div", 2, {}, "Классический френч");
-        const post3 = new Post("Мария", "div", 3, {}, "Летний яркий маникюр");
-        const container = document.getElementById("galleryContainer");
+    
+        class SmallPost extends Post {
+            constructor(masterName, tag = "div", imgId, style = {}, description = "") {
+                super(masterName, tag, imgId, style, description);
+                this.element.style.width = "100%";
+                this.element.style.height = "100%";
+                smallPostArray.push(this);
+            }
+        }
+    
+        let currentIndex = 0;
+    
+        const modal = document.getElementById("modalSlider");
+        const modalImg = document.getElementById("modalImage");
+        const modalCaption = document.getElementById("modalCaption");
+        const closeBtn = document.querySelector(".close");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+    
+        function openModal(index) {
+            currentIndex = index;
+            const currentPost = allImages[index];
+            modal.style.display = "flex";
+            modalImg.src = `../img/galleryImages/image${currentPost.imgId}.jpg`;
+            modalCaption.textContent = currentPost.description || "";
+        }
+    
+        function closeModal() {
+            modal.style.display = "none";
+        }
+    
+        function showNext() {
+            currentIndex = (currentIndex + 1) % allImages.length;
+            openModal(currentIndex);
+        }
+    
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+            openModal(currentIndex);
+        }
+    
+        closeBtn.addEventListener("click", closeModal);
+        nextBtn.addEventListener("click", showNext);
+        prevBtn.addEventListener("click", showPrev);
+    
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && modal.style.display === "flex") {
+                closeModal();
+            }
+        });
+    
+        // Создание постов
+        new Post("Анна", "div", 1, {}, "Маникюр с цветочным дизайном");
+        new Post("Елена", "div", 2, {}, "Классический френч");
+        new Post("Мария", "div", 3, {}, "Летний яркий маникюр");
+    
+        new SmallPost("Ирина", "div", 4, {}, "Акцент на минимализме");
+        new SmallPost("Светлана", "div", 5, {}, "Яркие акценты");
+        new SmallPost("Ольга", "div", 6, {}, "Элегантный стиль");
+        new SmallPost("Ирина", "div", 7, {}, "Акцент на минимализме");
+        new SmallPost("Светлана", "div", 8, {}, "Яркие акценты");
+        new SmallPost("Ольга", "div", 9, {}, "Элегантный стиль");
+        new SmallPost("Ольга", "div", 10, {}, "Элегантный стиль");
+    
+        let container = document.getElementById("galleryContainer");
         postArray.forEach(post => {
             container.appendChild(post.element);
         });
-    </script>
+    
+        let smallContainer = document.getElementById("galleryMainContainer");
+        smallPostArray.forEach(smallPost => {
+            smallContainer.appendChild(smallPost.element);
+        });
+    
+        let allImages = [];
+        for (let i = 0; i < postArray.length; i++) {
+            allImages.push(postArray[i]);
+        }
+    
+        for (let i = 0; i < smallPostArray.length; i++) {
+            allImages.push(smallPostArray[i]);
+        }
+    
+        for (let i = 0; i < allImages.length; i++) {
+            allImages[i].element.addEventListener("click", function () {
+                openModal(i);
+            });
+        }
+    </script>    
 </body>
 
 </html>
