@@ -56,8 +56,8 @@
                         <img class="modal-content" id="modalImage">
                         <div class="modal-caption" id="modalCaption"></div>
                         <div class="modal-nav">
-                            <button id="prevBtn">&#10094;</button>
-                            <button id="nextBtn">&#10095;</button>
+                            <button id="prev">&#10094;</button>
+                            <button id="next">&#10095;</button>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                 this.imgId = imgId;
                 this.description = description;
     
-                const defaultStyle = {
+                let defaultStyle = {
                     padding: "20px",
                     margin: "10px",
                     backgroundColor: "#f9f9f9",
@@ -145,7 +145,8 @@
                     border: "7px solid white",
                     borderBottom: "40px solid white",
                     transition: "0.25s",
-                    height: "470px"
+                    height: "470px",
+                    cursor: "pointer"
                 };
     
                 this.style = {};
@@ -183,16 +184,16 @@
     
         let currentIndex = 0;
     
-        const modal = document.getElementById("modalSlider");
-        const modalImg = document.getElementById("modalImage");
-        const modalCaption = document.getElementById("modalCaption");
-        const closeBtn = document.querySelector(".close");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
+        let modal = document.getElementById("modalSlider");
+        let modalImg = document.getElementById("modalImage");
+        let modalCaption = document.getElementById("modalCaption");
+        let close = document.querySelector(".close");
+        let prev = document.getElementById("prev");
+        let next = document.getElementById("next");
     
         function openModal(index) {
             currentIndex = index;
-            const currentPost = allImages[index];
+            let currentPost = allImages[index];
             modal.style.display = "flex";
             modalImg.src = `../img/galleryImages/image${currentPost.imgId}.jpg`;
             modalCaption.textContent = currentPost.description || "";
@@ -212,9 +213,9 @@
             openModal(currentIndex);
         }
     
-        closeBtn.addEventListener("click", closeModal);
-        nextBtn.addEventListener("click", showNext);
-        prevBtn.addEventListener("click", showPrev);
+        close.addEventListener("click", closeModal);
+        next.addEventListener("click", showNext);
+        prev.addEventListener("click", showPrev);
     
         modal.addEventListener("click", function (event) {
             if (event.target === modal) {
