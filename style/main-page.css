@@ -469,12 +469,14 @@ h3 {
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 2.5fr 1fr;
-    padding-top: 250px;
-    padding-bottom: 144px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     position: relative;
     overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .about__us p {

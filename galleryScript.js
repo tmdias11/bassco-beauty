@@ -49,37 +49,6 @@ class Post {
 
         postArray.push(this);
     }
-
-    sortPosts(criteria) {
-        let combined = [];
-
-        for (let i = 0; i < postArray.length; i++) {
-            combined.push(postArray[i]);
-        }
-        for (let i = 0; i < smallPostArray.length; i++) {
-            combined.push(smallPostArray[i]);
-        }
-
-        if (criteria === "master") {
-            combined.sort((a, b) => a.masterName.localeCompare(b.masterName));
-        } else if (criteria === "type") {
-            combined.sort((a, b) => a.type.localeCompare(b.type));
-        }
-
-        document.getElementById("galleryContainer").innerHTML = "";
-        document.getElementById("galleryMainContainer").innerHTML = "";
-
-        for (let i = 0; i < combined.length; i++) {
-            if (combined[i] instanceof SmallPost) {
-                document.getElementById("galleryMainContainer").appendChild(combined[i].element);
-            } else {
-                document.getElementById("galleryContainer").appendChild(combined[i].element);
-            }
-            combined[i].element.onclick = () => openModal(i);
-        }
-
-        allImages = combined;
-    }
 }
 
 class SmallPost extends Post {
@@ -88,6 +57,36 @@ class SmallPost extends Post {
         this.element.style.width = "100%";
         this.element.style.height = "100%";
         smallPostArray.push(this);
+    }
+
+    static sortPosts(criteria) {
+        let sorted = [];
+
+        for (let i = 0; i < smallPostArray.length; i++) {
+            sorted.push(smallPostArray[i]);
+        }
+
+        if (criteria === "master") {
+            sorted.sort((a, b) => a.masterName.localeCompare(b.masterName));
+        } else if (criteria === "type") {
+            sorted.sort((a, b) => a.type.localeCompare(b.type));
+        }
+
+        const container = document.getElementById("galleryMainContainer");
+        container.innerHTML = "";
+
+        for (let i = 0; i < sorted.length; i++) {
+            container.appendChild(sorted[i].element);
+            sorted[i].element.onclick = () => openModal(i + postArray.length);
+        }
+
+        allImages = [];
+        for (let i = 0; i < postArray.length; i++) {
+            allImages.push(postArray[i]);
+        }
+        for (let i = 0; i < sorted.length; i++) {
+            allImages.push(sorted[i]);
+        }
     }
 }
 
@@ -137,7 +136,6 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-// Посты
 new Post("Анна", "div", 23, {}, "Маникюр с цветочным дизайном", "Ламинирование");
 new Post("Елена", "div", 10, {}, "Классический френч", "Маникюр");
 new Post("Мария", "div", 13, {}, "Летний яркий маникюр", "Прическа");
@@ -194,7 +192,6 @@ for (let i = 0; i < allImages.length; i++) {
 document.getElementById("sortSelect").addEventListener("change", function () {
     const value = this.value;
     if (value) {
-        let postInstance = new Post();
-        postInstance.sortPosts(value);
+        SmallPost.sortPosts(value);
     }
 });

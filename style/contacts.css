@@ -1,0 +1,65 @@
+h1{
+    margin: 0;
+}
+
+.contacts__nav{
+    margin-top: 20px;
+}
+
+#map{
+    width: 70%;
+    height: 500px;
+}
+
+.contacts__main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contacts__main-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 85px;
+    color: black;
+    text-decoration: none;
+    align-items: left;
+}
+
+.contacts__main-links a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #30343D;
+}
+
+.contacts__main-links a:hover{
+    
+    color: #F7AB42;
+}
+
+.contacts__main-links span {
+    color: #30343D;
+    font-size: 17px;
+}
+
+.contacts__main-links a:first-of-type span::before {
+    content: url(../img/phone.svg);
+    margin-right: 10px;
+}
+
+.contacts__main-links a:nth-of-type(2) span::before {
+    content: url(../img/email.svg);
+    margin-right: 10px;
+}
+
+.contacts__main-links span::before {
+    content: url(../img/location.svg);
+    margin-right: 10px;
+}
+
+.main-links__socials{
+    display: flex;
+    gap: 10px;
+}

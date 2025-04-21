@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bassco Beauty</title>
+    <link rel="icon" href="../img/logoicon.svg">
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/main-page.css">
+    <link rel="stylesheet" href="../style/catalogue.css">
+    <link rel="stylesheet" href="../style/contacts.css">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script type="text/javascript">
+        var map;
+
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [54.98, 82.89],
+                zoom: 13
+            });
+
+            DG.marker([54.98, 82.89]).addTo(map).bindPopup('Здесь мы находимся!');
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <!--Шапка с навигацией-->
+        <div class="container">
+            <div class="header__upper">
+                <a href="../index.html"><img src="../img/logo.png" alt="Логотип"></a>
+                <nav class="header__upper-nav">
+                    <a href="../index.html">ГЛАВНАЯ</a>
+                    <a href="catalogue.html">КАТАЛОГ</a>
+                    <a href="gallery.html">ГАЛЛЕРЕЯ</a>
+                    <a href="about.html">О КОМПАНИИ</a>
+                    <a href="contacts.html">КОНТАКТЫ</a>
+                </nav>
+                <div class="header__upper-contacts">
+                    <button class="header__upper-contacts__button button__yellow">
+                        СОТРУДНИЧЕСТВО
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="catalogue__sort-nav contacts__nav">
+                <a href="../index.html">Главная</a>
+                <span>-----</span>
+                <a href="contacts.html">Контакты</a>
+                <h1>Контакты</h1>
+            </div>
+        </div>
+
+        <section class="contacts">
+            <div class="container">
+                <div class="contacts__main">
+                    <div class="contacts__main-links">
+                        <a href="asd">
+                            <span>8 800 111-11-11</span><br>
+                            Заказать звонок
+                        </a>
+                        <a href="asd">
+                            <span>info@bassco.ru</span><br>
+                            По любым вопросам
+                        </a>
+                        <span>г. Новосибирск, ул. Покрышкина,<br>
+                            д. 12, корп.2, оф. 112
+                        </span>
+                        <div class="main-links__socials">
+                            <a href="asd"><img src="../img/vk-logo.svg" alt="Логотип ВКонтакте"></a>
+                            <a href="asd"><img src="../img/facebook-logo.png" alt="Логотип Фейсбук"></a>
+                            <a href="asd"><img src="../img/ok-logo.svg" alt="Логотип Одноклассники"></a>
+                            <a href="asd"><img src="../img/telegram-logo.svg" alt="Логотип Телеграм"></a>
+                        </div>
+                    </div>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="upper-footer">
+                <img src="../img/logo.png" alt="">
+                <div class="upper-footer__nav">
+                    <nav>
+                        <a href="../index.html">ГЛАВНАЯ</a>
+                        <a href="catalogue.html">КАТАЛОГ</a>
+                        <a href="gallery.html">ГАЛЛЕРЕЯ</a>
+                        <a href="about.html">О КОМПАНИИ</a>
+                        <a href="contacts.html">КОНТАКТЫ</a>
+                    </nav>
+                    <button class="button__yellow">СОТРУДНИЧЕСТВО</button>
+                </div>
+            </div>
+            <div class="under-footer">
+                <span>© Bassco 2022</span>
+                <a href="asd">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
