@@ -16,13 +16,18 @@
             <div class="container">
                 <div class="header__upper">
                     <a href="index.html"><img src="./img/logo.png" alt="Логотип"></a>
-                    <nav class="header__upper-nav">
+                    <nav class="header__upper-nav" id="nav">
                         <a href="index.html">ГЛАВНАЯ</a>
                         <a href="./pages/catalogue.html">КАТАЛОГ</a>
                         <a href="./pages/gallery.html">ГАЛЛЕРЕЯ</a>
                         <a href="./pages/about.html">О КОМПАНИИ</a>
                         <a href="./pages/contacts.html">КОНТАКТЫ</a>
                     </nav>
+                    <div class="header__upper-burger" id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                     <div class="header__upper-contacts">
                         <button class="header__upper-contacts__button button__yellow">
                             СОТРУДНИЧЕСТВО
@@ -49,7 +54,7 @@
                                 ПОДРОБНЕЕ
                             </button>
                         </div>
-                        <img src="./img/facepage.png" alt="Face page model">
+                        <img src="./img/face-card.png" alt="Face page model">
                     </div>
                     <div class="face_sales">
                         <div class="container">
@@ -167,6 +172,14 @@
             </div>
         </div>
     </footer>
+    <script>
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('nav');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    </script>
 </body>
 
 </html>
