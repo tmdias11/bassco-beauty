@@ -24,7 +24,7 @@ class Post {
             border: "7px solid white",
             borderBottom: "40px solid white",
             transition: "0.25s",
-            height: "470px",
+            height: "100%",
             cursor: "pointer"
         };
 

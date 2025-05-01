@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bassco Beauty</title>
+    <script src="headerBurger.js" defer></script>
     <link rel="icon" href="./img/logoicon.svg">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/main-page.css">
@@ -12,29 +13,29 @@
 
 <body>
     <header class="header">
-        <!--Шапка с навигацией-->
-            <div class="container">
-                <div class="header__upper">
-                    <a href="index.html"><img src="./img/logo.png" alt="Логотип"></a>
-                    <nav class="header__upper-nav" id="nav">
-                        <a href="index.html">ГЛАВНАЯ</a>
-                        <a href="./pages/catalogue.html">КАТАЛОГ</a>
-                        <a href="./pages/gallery.html">ГАЛЛЕРЕЯ</a>
-                        <a href="./pages/about.html">О КОМПАНИИ</a>
-                        <a href="./pages/contacts.html">КОНТАКТЫ</a>
-                    </nav>
-                    <div class="header__upper-burger" id="burger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="header__upper-contacts">
-                        <button class="header__upper-contacts__button button__yellow">
-                            СОТРУДНИЧЕСТВО
-                        </button>
-                    </div>
+        <!-- Шапка с навигацией -->
+        <div class="container">
+            <div class="header__upper">
+                <a href="index.html" id="logoLink"><img src="./img/logo.png" alt="Логотип"></a>
+                <nav class="header__upper-nav" id="nav">
+                    <a href="index.html">ГЛАВНАЯ</a>
+                    <a href="./pages/catalogue.html">КАТАЛОГ</a>
+                    <a href="./pages/gallery.html">ГАЛЛЕРЕЯ</a>
+                    <a href="./pages/about.html">О КОМПАНИИ</a>
+                    <a href="./pages/contacts.html">КОНТАКТЫ</a>
+                </nav>
+                <div class="header__upper-burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>                
+                <div class="header__upper-contacts">
+                    <button class="header__upper-contacts__button button__yellow">
+                        СОТРУДНИЧЕСТВО
+                    </button>
                 </div>
             </div>
+        </div>
     </header>
     <main>
         <section class="options"> <!-- Лицевая карта товаров -->
@@ -172,14 +173,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        const burger = document.getElementById('burger');
-        const nav = document.getElementById('nav');
-
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('open');
-        });
-    </script>
 </body>
 
 </html>

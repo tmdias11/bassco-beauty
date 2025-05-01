@@ -7,6 +7,7 @@
     <title>Bassco Beauty</title>
     <link rel="icon" href="../img/logoicon.svg">
     <script src="../galleryScript.js" defer></script>
+    <script src="../headerBurger.js" defer></script>
     <link rel="stylesheet" href="../style/gallery.css">
     <link rel="stylesheet" href="../style/main-page.css">
     <link rel="stylesheet" href="../style/catalogue.css">
@@ -15,17 +16,22 @@
 
 <body>
     <header class="header">
-        <!--Шапка с навигацией-->
+        <!-- Шапка с навигацией -->
         <div class="container">
             <div class="header__upper">
-                <a href="../index.html"><img src="../img/logo.png" alt="Логотип"></a>
-                <nav class="header__upper-nav">
+                <a href="../index.html" id="logoLink"><img src="../img/logo.png" alt="Логотип"></a>
+                <nav class="header__upper-nav" id="nav">
                     <a href="../index.html">ГЛАВНАЯ</a>
                     <a href="catalogue.html">КАТАЛОГ</a>
                     <a href="gallery.html">ГАЛЛЕРЕЯ</a>
                     <a href="about.html">О КОМПАНИИ</a>
                     <a href="contacts.html">КОНТАКТЫ</a>
                 </nav>
+                <div class="header__upper-burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>                
                 <div class="header__upper-contacts">
                     <button class="header__upper-contacts__button button__yellow">
                         СОТРУДНИЧЕСТВО
