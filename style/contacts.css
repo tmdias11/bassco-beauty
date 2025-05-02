@@ -2,6 +2,10 @@ h1{
     margin: 0;
 }
 
+main{
+    padding: 10px;
+}
+
 .contacts__nav{
     margin-top: 20px;
 }
@@ -62,4 +66,26 @@ h1{
 .main-links__socials{
     display: flex;
     gap: 10px;
+}
+
+@media screen and (min-width: 300px) and (max-width:768px){
+    .contacts__nav{
+        margin-left: 0;
+    }
+
+    .contacts__main{
+        flex-direction: column;
+        
+    }
+
+    .contacts__main-links{
+        gap: 40px;
+        margin-bottom: 40px;
+        justify-content: center;
+    }
+
+    #map{
+        height: 250px;
+        width: 100%;
+    }
 }
